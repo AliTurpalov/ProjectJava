@@ -20,6 +20,7 @@
 1. **Клонирование репозитория**
 
 git clone https://github.com/AliTurpalov/ProjectJava.git
+
 cd ProjectJava
 
 
@@ -31,9 +32,6 @@ java -jar your-jar-file.jar
 3. **Запуск тестов**
 
 mvn test
-
-
-## Технологии
 
 ProjectJava использует следующие технологии и библиотеки:
 - Java 11
