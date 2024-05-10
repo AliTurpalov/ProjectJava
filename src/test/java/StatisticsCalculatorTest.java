@@ -21,31 +21,38 @@ public class StatisticsCalculatorTest {
     public void testMin() {
         int expected = 1;
         int actual = StatisticsCalculator._min(testNumbers);
-        Assert.assertEquals("Минимальное значение должно быть 1", expected, actual);
-        System.out.println("Минимальное значение корректно: " + actual);
+        Assert.assertEquals("Min = 1", expected, actual);
+        System.out.println("Min sovpalo: " + actual);
     }
 
     @Test
     public void testMax() {
         int expected = 4;
         int actual = StatisticsCalculator._max(testNumbers);
-        Assert.assertEquals("Максимальное значение должно быть 4", expected, actual);
-        System.out.println("Максимальное значение корректно: " + actual);
+        Assert.assertEquals("Max = 4", expected, actual);
+        System.out.println("Max sovpalo: " + actual);
     }
 
     @Test
     public void testSum() {
         int expected = 10;
         int actual = StatisticsCalculator._sum(testNumbers);
-        Assert.assertEquals("Сумма всех чисел должна быть 10", expected, actual);
-        System.out.println("Сумма всех чисел корректна: " + actual);
+        Assert.assertEquals("Summ = 10", expected, actual);
+        System.out.println("Summ sovpalo: " + actual);
     }
+
 
     @Test
     public void testMult() {
         long expected = 24;
         long actual = StatisticsCalculator._mult(testNumbers);
-        Assert.assertEquals("Произведение всех чисел должно быть 24", expected, actual);
-        System.out.println("Произведение всех чисел корректно: " + actual);
+        Assert.assertEquals("РџСЂРѕРёР·РІРµРґРµРЅРёРµ РІСЃРµС… С‡РёСЃРµР» РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ 24", expected, actual);
+        System.out.println("РџСЂРѕРёР·РІРµРґРµРЅРёРµ РІСЃРµС… С‡РёСЃРµР» РєРѕСЂСЂРµРєС‚РЅРѕ: " + actual);
+    }
+}
+        long expected = 24;
+        long actual = StatisticsCalculator._mult(testNumbers);
+        Assert.assertEquals("ГЏГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГҐ ГўГ±ГҐГµ Г·ГЁГ±ГҐГ« Г¤Г®Г«Г¦Г­Г® ГЎГ»ГІГј 24", expected, actual);
+        System.out.println("ГЏГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГҐ ГўГ±ГҐГµ Г·ГЁГ±ГҐГ« ГЄГ®Г°Г°ГҐГЄГІГ­Г®: " + actual);
     }
 }
