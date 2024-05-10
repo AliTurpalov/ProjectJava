@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StatisticsCalculatorTest {
+public class StatisticsCalculator {
 
     public static List<Integer> readNumbersFromFile(String filePath) throws IOException {
         String content = Files.readString(Paths.get(filePath));
