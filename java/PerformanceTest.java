@@ -1,4 +1,7 @@
 import org.junit.Test;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.Assert;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -7,28 +10,28 @@ public class PerformanceTest {
 
     @Test
     public void testPerformance() {
-        int initialSize = 3;  // Начальное количество элементов
-        int stepSize = 2;     // Шаг увеличения размера массива
-        int numberOfArrays = 7; // Количество массивов
+        int initialSize = 3;  // ГЌГ Г·Г Г«ГјГ­Г®ГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў
+        int stepSize = 2;     // ГГ ГЈ ГіГўГҐГ«ГЁГ·ГҐГ­ГЁГї Г°Г Г§Г¬ГҐГ°Г  Г¬Г Г±Г±ГЁГўГ 
+        int numberOfArrays = 7; // ГЉГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г¬Г Г±Г±ГЁГўГ®Гў
 
         for (int i = 0; i < numberOfArrays; i++) {
             int currentSize = initialSize + i * stepSize;
             List<Integer> numbers = generateRandomNumbers(currentSize, 1, 15);
             
             long startTime, duration;
-            System.out.println("Массив " + (i+1) + " (" + currentSize + " элементов): " + numbers);
+            System.out.println("ГЊГ Г±Г±ГЁГў " + (i+1) + " (" + currentSize + " ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў): " + numbers);
 
-            // Тестирование суммы
+            // Г’ГҐГ±ГІГЁГ°Г®ГўГ Г­ГЁГҐ Г±ГіГ¬Г¬Г»
             startTime = System.nanoTime();
             int sum = StatisticsCalculator._sum(numbers);
             duration = System.nanoTime() - startTime;
-            System.out.println("Сумма: " + sum + ", Время выполнения: " + duration);
+            System.out.println("Г‘ГіГ¬Г¬Г : " + sum + ", Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї: " + duration);
 
-            // Тестирование произведения
+            // Г’ГҐГ±ГІГЁГ°Г®ГўГ Г­ГЁГҐ ГЇГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГї
             startTime = System.nanoTime();
             long mult = StatisticsCalculator._mult(numbers);
             duration = System.nanoTime() - startTime;
-            System.out.println("Произведение: " + mult + ", Время выполнения: " + duration);
+            System.out.println("ГЏГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГҐ: " + mult + ", Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї: " + duration);
         }
     }
 
