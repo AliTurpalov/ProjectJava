@@ -28,16 +28,10 @@ jobs:
 
     - name: Notify on Success
       if: success()
-      uses: appleboy/telegram-action@master
-      with:
-        to: <6510825489>
-        message: "Все тесты прошли успешно."
-        token: ${{secrets.TELEGRAM_TOKEN}}
+      run: |
+        curl -X POST -H "Content-Type: application/json" -d '{"chat_id": "6510825489", "text": "Все тесты прошли успешно."}' https://api.telegram.org/bot$7120790438:AAFsRSCgI-T8IA1SRN9x6kqKY4h3N-4XqWw/sendMessage
 
     - name: Notify on Failure
       if: failure()
-      uses: appleboy/telegram-action@master
-      with:
-        to: <6510825489>
-        message: "Ошибка в тестах, проверьте результаты."
-        token: ${{secrets.TELEGRAM_TOKEN}}
+      run: |
+        curl -X POST -H "Content-Type: application/json" -d '{"chat_id": "6510825489", "text": "Ошибка в тестах, проверьте результаты."}' https://api.telegram.org/bot$7120790438:AAFsRSCgI-T8IA1SRN9x6kqKY4h3N-4XqWw/sendMessage
