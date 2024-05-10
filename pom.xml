@@ -13,19 +13,20 @@
     </properties>
 
     <dependencies>
-        <!-- Пример зависимости JUnit для тестирования -->
+        <!-- Dependency for JUnit Jupiter API, for writing tests -->
         <dependency>
-                 <groupId>org.junit.jupiter</groupId>
-                 <artifactId>junit-jupiter-api</artifactId>
-                 <version>5.7.0</version>
-                 <scope>test</scope>
-             </dependency>
-         <dependency>
-                 <groupId>org.junit.jupiter</groupId>
-                 <artifactId>junit-jupiter-engine</artifactId>
-                 <version>5.7.0</version>
-                 <scope>test</scope>
-         </dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Dependency for JUnit Jupiter Engine, for running tests -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -37,6 +38,17 @@
                 <configuration>
                     <source>11</source>
                     <target>11</target>
+                </configuration>
+            </plugin>
+            <!-- Maven Surefire Plugin for running tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
                 </configuration>
             </plugin>
         </plugins>
