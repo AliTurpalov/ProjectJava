@@ -26,21 +26,14 @@ jobs:
   notify_on_failure:
     needs: build
     runs-on: ubuntu-latest
-    if: failure()
+    if: always()
 
     steps:
-    - name: Send Telegram notification on success
-      if: ${{ needs.build.result == 'success' }}
+    - name: Send Telegram notification
       uses: appleboy/telegram-action@master
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: "CI tests passed successfully 🎉"
-
-    - name: Send Telegram notification on failure
-      if: ${{ needs.build.result == 'failure' }}
-      uses: appleboy/telegram-action@master
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: "CI tests failed ❌"
+        message: |
+          CI tests result:
+          Status: ${{ needs.build.result }}
