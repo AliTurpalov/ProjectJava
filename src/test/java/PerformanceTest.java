@@ -7,28 +7,28 @@ public class PerformanceTest {
 
     @Test
     public void testPerformance() {
-        int initialSize = 3;  // Начальное количество элементов
-        int stepSize = 2;     // Шаг увеличения размера массива
-        int numberOfArrays = 7; // Количество массивов
+        int initialSize = 3;  // РќР°С‡Р°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ
+        int stepSize = 2;     // РЁР°Рі СѓРІРµР»РёС‡РµРЅРёСЏ СЂР°Р·РјРµСЂР° РјР°СЃСЃРёРІР°
+        int numberOfArrays = 7; // РљРѕР»РёС‡РµСЃС‚РІРѕ РјР°СЃСЃРёРІРѕРІ
 
         for (int i = 0; i < numberOfArrays; i++) {
             int currentSize = initialSize + i * stepSize;
             List<Integer> numbers = generateRandomNumbers(currentSize, 1, 15);
             
             long startTime, duration;
-            System.out.println("Массив " + (i+1) + " (" + currentSize + " элементов): " + numbers);
+            System.out.println("РњР°СЃСЃРёРІ " + (i+1) + " (" + currentSize + " СЌР»РµРјРµРЅС‚РѕРІ): " + numbers);
 
-            // Тестирование суммы
+            // РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ СЃСѓРјРјС‹
             startTime = System.nanoTime();
             int sum = StatisticsCalculator._sum(numbers);
             duration = System.nanoTime() - startTime;
-            System.out.println("Сумма: " + sum + ", Время выполнения: " + duration);
+            System.out.println("РЎСѓРјРјР°: " + sum + ", Р’СЂРµРјСЏ РІС‹РїРѕР»РЅРµРЅРёСЏ: " + duration);
 
-            // Тестирование произведения
+            // РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РїСЂРѕРёР·РІРµРґРµРЅРёСЏ
             startTime = System.nanoTime();
             long mult = StatisticsCalculator._mult(numbers);
             duration = System.nanoTime() - startTime;
-            System.out.println("Произведение: " + mult + ", Время выполнения: " + duration);
+            System.out.println("РџСЂРѕРёР·РІРµРґРµРЅРёРµ: " + mult + ", Р’СЂРµРјСЏ РІС‹РїРѕР»РЅРµРЅРёСЏ: " + duration);
         }
     }
 
