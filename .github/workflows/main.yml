@@ -23,24 +23,15 @@ jobs:
     - name: Test with Maven
       run: mvn test
 
-  notify:
+  notify_on_failure:
     needs: build
     runs-on: ubuntu-latest
-    if: always()
+    if: failure()
 
     steps:
-    - name: Send Telegram notification on success
-      if: ${{ needs.build.result == 'success' }}
-      uses: appleboy/telegram-action@master
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: '7120790438:AAFsRSCgI-T8IA1SRN9x6kqKY4h3N-4XqWw'
-        message: "CI тесты пройдены 🎉"
-
     - name: Send Telegram notification on failure
-      if: ${{ needs.build.result == 'failure' }}
       uses: appleboy/telegram-action@master
       with:
         to: ${{ secrets.TELEGRAM_TO }}
-        token: '7120790438:AAFsRSCgI-T8IA1SRN9x6kqKY4h3N-4XqWw'
-        message: "CI тесты провалены ❌"
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: "CI tests failed ❌"
