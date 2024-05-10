@@ -6,12 +6,12 @@ public class StatisticsCalculator {
     public static void main(String[] args) {
         try {
             List<Integer> numbers = readNumbersFromFile("numbers.txt");
-            System.out.println("Min: " + _min(numbers));
-            System.out.println("Max: " + _max(numbers));
-            System.out.println("Sum: " + _sum(numbers));
-            System.out.println("Proizvedemie: " + _mult(numbers));
+            System.out.println("Минимальное: " + _min(numbers));
+            System.out.println("Максимальное: " + _max(numbers));
+            System.out.println("Сумма: " + _sum(numbers));
+            System.out.println("Произведение: " + _mult(numbers));
         } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Ошибка при чтении файла: " + e.getMessage());
         }
     }
 
@@ -24,7 +24,7 @@ public class StatisticsCalculator {
                 numbers.add(Integer.parseInt(token));
             }
         } catch (NumberFormatException e) {
-            System.err.println("Îøèáêà â ôîðìàòå ÷èñëà: " + e.getMessage());
+            System.err.println("Ошибка в формате числа: " + e.getMessage());
         }
         return numbers;
     }
