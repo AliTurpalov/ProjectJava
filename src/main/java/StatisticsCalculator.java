@@ -1,48 +1,44 @@
-import java.io.*;
-import java.nio.file.*;
-import java.util.*;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class StatisticsCalculator {
+
+    public static List<Integer> readNumbersFromFile(String filePath) throws IOException {
+        String content = Files.readString(Paths.get(filePath));
+        return Arrays.stream(content.split("\\s+"))
+                     .map(Integer::parseInt)
+                     .collect(Collectors.toList());
+    }
+
+    public static int findMin(List<Integer> numbers) {
+        return numbers.stream().min(Integer::compare).orElseThrow();
+    }
+
+    public static int findMax(List<Integer> numbers) {
+        return numbers.stream().max(Integer::compare).orElseThrow();
+    }
+
+    public static int sumAll(List<Integer> numbers) {
+        return numbers.stream().reduce(0, Integer::sum);
+    }
+
+    public static long multiplyAll(List<Integer> numbers) {
+        return numbers.stream().reduce(1, (a, b) -> a * b);
+    }
+
     public static void main(String[] args) {
         try {
             List<Integer> numbers = readNumbersFromFile("numbers.txt");
-            System.out.println("Минимальное: " + _min(numbers));
-            System.out.println("Максимальное: " + _max(numbers));
-            System.out.println("Сумма: " + _sum(numbers));
-            System.out.println("Произведение: " + _mult(numbers));
+            System.out.println("Минимальное число: " + findMin(numbers));
+            System.out.println("Максимальное число: " + findMax(numbers));
+            System.out.println("Сумма всех чисел: " + sumAll(numbers));
+            System.out.println("Произведение всех чисел: " + multiplyAll(numbers));
         } catch (IOException e) {
             System.out.println("Ошибка при чтении файла: " + e.getMessage());
         }
-    }
-
-    public static List<Integer> readNumbersFromFile(String filename) throws IOException {
-        String content = Files.readString(Path.of(filename));
-        String[] tokens = content.split("\\s+");
-        List<Integer> numbers = new ArrayList<>();
-        try {
-            for (String token : tokens) {
-                numbers.add(Integer.parseInt(token));
-            }
-        } catch (NumberFormatException e) {
-            System.err.println("Ошибка в формате числа: " + e.getMessage());
-        }
-        return numbers;
-    }
-
-
-    public static int _min(List<Integer> numbers) {
-        return Collections.min(numbers);
-    }
-
-    public static int _max(List<Integer> numbers) {
-        return Collections.max(numbers);
-    }
-
-    public static int _sum(List<Integer> numbers) {
-        return numbers.stream().mapToInt(Integer::intValue).sum();
-    }
-
-    public static long _mult(List<Integer> numbers) {
-        return numbers.stream().mapToLong(Integer::longValue).reduce(1, (a, b) -> a * b);
     }
 }
