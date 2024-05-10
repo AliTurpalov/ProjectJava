@@ -25,31 +25,31 @@ public class StatisticsCalculatorTest {
     public void testMin() {
         int expected = 1;
         int actual = StatisticsCalculator._min(testNumbers);
-        Assert.assertEquals("Ìèíèìàëüíîå çíà÷åíèå äîëæíî áûòü 1", expected, actual);
-        System.out.println("Ìèíèìàëüíîå çíà÷åíèå êîððåêòíî: " + actual);
+        Assert.assertEquals("Min = 1", expected, actual);
+        System.out.println("Min pravilno: " + actual);
     }
 
     @Test
     public void testMax() {
         int expected = 4;
         int actual = StatisticsCalculator._max(testNumbers);
-        Assert.assertEquals("Ìàêñèìàëüíîå çíà÷åíèå äîëæíî áûòü 4", expected, actual);
-        System.out.println("Ìàêñèìàëüíîå çíà÷åíèå êîððåêòíî: " + actual);
+        Assert.assertEquals("Max = 4", expected, actual);
+        System.out.println("Max pravilno: " + actual);
     }
 
     @Test
     public void testSum() {
         int expected = 10;
         int actual = StatisticsCalculator._sum(testNumbers);
-        Assert.assertEquals("Ñóììà âñåõ ÷èñåë äîëæíà áûòü 10", expected, actual);
-        System.out.println("Ñóììà âñåõ ÷èñåë êîððåêòíà: " + actual);
+        Assert.assertEquals("Summ = 10", expected, actual);
+        System.out.println("Summ pravilno: " + actual);
     }
 
     @Test
     public void testMult() {
         long expected = 24;
         long actual = StatisticsCalculator._mult(testNumbers);
-        Assert.assertEquals("Ïðîèçâåäåíèå âñåõ ÷èñåë äîëæíî áûòü 24", expected, actual);
-        System.out.println("Ïðîèçâåäåíèå âñåõ ÷èñåë êîððåêòíî: " + actual);
+        Assert.assertEquals("proizvedenie = 24", expected, actual);
+        System.out.println("proizvedenie pravilno: " + actual);
     }
 }
