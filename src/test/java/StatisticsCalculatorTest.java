@@ -50,9 +50,4 @@ public class StatisticsCalculatorTest {
         System.out.println("Произведение всех чисел корректно: " + actual);
     }
 }
-        long expected = 24;
-        long actual = StatisticsCalculator._mult(testNumbers);
-        Assert.assertEquals("Ïðîèçâåäåíèå âñåõ ÷èñåë äîëæíî áûòü 24", expected, actual);
-        System.out.println("Ïðîèçâåäåíèå âñåõ ÷èñåë êîððåêòíî: " + actual);
-    }
-}
+
