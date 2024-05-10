@@ -1,0 +1,20 @@
+import org.junit.Test;
+import static org.junit.Assert.assertArrayEquals;
+
+import java.util.Arrays;
+
+public class SortingTest {
+
+    @Test
+    public void testSortingAscending() {
+        int[] inputArray = {5, 2, 7, 1, 9, 3}; // Входной массив чисел
+        int[] expectedArray = {1, 2, 3, 5, 7, 9}; // Ожидаемый результат после сортировки
+
+        // Копируем входной массив, чтобы не изменять его при сортировке
+        int[] sortedArray = Arrays.copyOf(inputArray, inputArray.length);
+        Arrays.sort(sortedArray); // Сортируем массив
+
+        // Проверяем, что отсортированный массив соответствует ожидаемому результату
+        assertArrayEquals(expectedArray, sortedArray);
+    }
+}
