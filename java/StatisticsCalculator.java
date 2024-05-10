@@ -1,3 +1,4 @@
+import org.junit.Test;
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
@@ -6,12 +7,12 @@ public class StatisticsCalculator {
     public static void main(String[] args) {
         try {
             List<Integer> numbers = readNumbersFromFile("numbers.txt");
-            System.out.println("Минимальное: " + _min(numbers));
-            System.out.println("Максимальное: " + _max(numbers));
-            System.out.println("Сумма: " + _sum(numbers));
-            System.out.println("Произведение: " + _mult(numbers));
+            System.out.println("ГЊГЁГ­ГЁГ¬Г Г«ГјГ­Г®ГҐ: " + _min(numbers));
+            System.out.println("ГЊГ ГЄГ±ГЁГ¬Г Г«ГјГ­Г®ГҐ: " + _max(numbers));
+            System.out.println("Г‘ГіГ¬Г¬Г : " + _sum(numbers));
+            System.out.println("ГЏГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГҐ: " + _mult(numbers));
         } catch (IOException e) {
-            System.out.println("Ошибка при чтении файла: " + e.getMessage());
+            System.out.println("ГЋГёГЁГЎГЄГ  ГЇГ°ГЁ Г·ГІГҐГ­ГЁГЁ ГґГ Г©Г«Г : " + e.getMessage());
         }
     }
 
@@ -24,7 +25,7 @@ public class StatisticsCalculator {
                 numbers.add(Integer.parseInt(token));
             }
         } catch (NumberFormatException e) {
-            System.err.println("Ошибка в формате числа: " + e.getMessage());
+            System.err.println("ГЋГёГЁГЎГЄГ  Гў ГґГ®Г°Г¬Г ГІГҐ Г·ГЁГ±Г«Г : " + e.getMessage());
         }
         return numbers;
     }
