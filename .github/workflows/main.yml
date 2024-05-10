@@ -32,7 +32,7 @@ jobs:
       with:
         to: <@ekzamenatorr>
         message: "Все тесты прошли успешно."
-        token: ${{ secrets.TELEGRAM_TOKEN }}
+        token: ${{secrets.TELEGRAM_TOKEN}}
 
     - name: Notify on Failure
       if: failure()
@@ -40,4 +40,4 @@ jobs:
       with:
         to: <@ekzamenatorr>
         message: "Ошибка в тестах, проверьте результаты."
-        token: ${{ secrets.TELEGRAM_TOKEN }}
+        token: ${{secrets.TELEGRAM_TOKEN}}
