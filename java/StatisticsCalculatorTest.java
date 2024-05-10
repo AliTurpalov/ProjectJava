@@ -1,4 +1,5 @@
 import org.junit.*;
+import org.junit.Test;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,31 +22,31 @@ public class StatisticsCalculatorTest {
     public void testMin() {
         int expected = 1;
         int actual = StatisticsCalculator._min(testNumbers);
-        Assert.assertEquals("Минимальное значение должно быть 1", expected, actual);
-        System.out.println("Минимальное значение корректно: " + actual);
+        Assert.assertEquals("ГЊГЁГ­ГЁГ¬Г Г«ГјГ­Г®ГҐ Г§Г­Г Г·ГҐГ­ГЁГҐ Г¤Г®Г«Г¦Г­Г® ГЎГ»ГІГј 1", expected, actual);
+        System.out.println("ГЊГЁГ­ГЁГ¬Г Г«ГјГ­Г®ГҐ Г§Г­Г Г·ГҐГ­ГЁГҐ ГЄГ®Г°Г°ГҐГЄГІГ­Г®: " + actual);
     }
 
     @Test
     public void testMax() {
         int expected = 4;
         int actual = StatisticsCalculator._max(testNumbers);
-        Assert.assertEquals("Максимальное значение должно быть 4", expected, actual);
-        System.out.println("Максимальное значение корректно: " + actual);
+        Assert.assertEquals("ГЊГ ГЄГ±ГЁГ¬Г Г«ГјГ­Г®ГҐ Г§Г­Г Г·ГҐГ­ГЁГҐ Г¤Г®Г«Г¦Г­Г® ГЎГ»ГІГј 4", expected, actual);
+        System.out.println("ГЊГ ГЄГ±ГЁГ¬Г Г«ГјГ­Г®ГҐ Г§Г­Г Г·ГҐГ­ГЁГҐ ГЄГ®Г°Г°ГҐГЄГІГ­Г®: " + actual);
     }
 
     @Test
     public void testSum() {
         int expected = 10;
         int actual = StatisticsCalculator._sum(testNumbers);
-        Assert.assertEquals("Сумма всех чисел должна быть 10", expected, actual);
-        System.out.println("Сумма всех чисел корректна: " + actual);
+        Assert.assertEquals("Г‘ГіГ¬Г¬Г  ГўГ±ГҐГµ Г·ГЁГ±ГҐГ« Г¤Г®Г«Г¦Г­Г  ГЎГ»ГІГј 10", expected, actual);
+        System.out.println("Г‘ГіГ¬Г¬Г  ГўГ±ГҐГµ Г·ГЁГ±ГҐГ« ГЄГ®Г°Г°ГҐГЄГІГ­Г : " + actual);
     }
 
     @Test
     public void testMult() {
         long expected = 24;
         long actual = StatisticsCalculator._mult(testNumbers);
-        Assert.assertEquals("Произведение всех чисел должно быть 24", expected, actual);
-        System.out.println("Произведение всех чисел корректно: " + actual);
+        Assert.assertEquals("ГЏГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГҐ ГўГ±ГҐГµ Г·ГЁГ±ГҐГ« Г¤Г®Г«Г¦Г­Г® ГЎГ»ГІГј 24", expected, actual);
+        System.out.println("ГЏГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ГЁГҐ ГўГ±ГҐГµ Г·ГЁГ±ГҐГ« ГЄГ®Г°Г°ГҐГЄГІГ­Г®: " + actual);
     }
 }
