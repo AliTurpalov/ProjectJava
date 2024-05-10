@@ -30,7 +30,7 @@ jobs:
       if: success()
       uses: appleboy/telegram-action@master
       with:
-        to: <6510825489>
+        to: <@ekzamenatorr>
         message: "Все тесты прошли успешно."
         token: ${{ secrets.TELEGRAM_TOKEN }}
 
@@ -38,6 +38,6 @@ jobs:
       if: failure()
       uses: appleboy/telegram-action@master
       with:
-        to: <6510825489>
+        to: <@ekzamenatorr>
         message: "Ошибка в тестах, проверьте результаты."
         token: ${{ secrets.TELEGRAM_TOKEN }}
