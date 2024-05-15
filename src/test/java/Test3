@@ -1,23 +1,32 @@
 import org.junit.Test;
-import static org.junit.Assert.assertArrayEquals;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
-import java.util.Arrays;
-
-public class SortingTest {
+public class ExtendedFunctionalityTest {
 
     @Test
-    public void testSortingAscending() {
-        int[] inputArray = {5, 2, 7, 1, 9, 3}; // Входной массив чисел
-        int[] expectedArray = {1, 2, 3, 5, 7, 9}; // Ожидаемый результат после сортировки
-
-        // Копируем входной массив, чтобы не изменять его при сортировке
-        int[] sortedArray = Arrays.copyOf(inputArray, inputArray.length);
-        Arrays.sort(sortedArray); // Сортируем массив
-
-        // Проверяем, что отсортированный массив соответствует ожидаемому результату
-        assertArrayEquals(expectedArray, sortedArray);
+    public void testRandomArrayOperations() {
+        // Генерация массива из 15 случайных чисел от 1 до 10
+        List<Integer> numbers = generateRandomNumbers(15, 1, 10);
         
-        // Если массивы совпадают, выводим сообщение
-        System.out.println("Все ок, массив отсортирован верно");
+        // Вывод сгенерированного массива
+        System.out.println("Сгенерированный массив: " + numbers);
+
+        // Выполнение функций и вывод результатов
+        System.out.println("Минимальное значение: " + StatisticsCalculator._min(numbers));
+        System.out.println("Максимальное значение: " + StatisticsCalculator._max(numbers));
+        System.out.println("Сумма всех чисел: " + StatisticsCalculator._sum(numbers));
+        System.out.println("Произведение всех чисел: " + StatisticsCalculator._mult(numbers));
+    }
+
+    // Метод для генерации списка случайных чисел
+    private List<Integer> generateRandomNumbers(int count, int min, int max) {
+        List<Integer> numbers = new ArrayList<>();
+        Random random = new Random();
+        for (int i = 0; i < count; i++) {
+            numbers.add(random.nextInt(max - min + 1) + min);
+        }
+        return numbers;
     }
 }
