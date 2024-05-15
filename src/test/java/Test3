@@ -16,5 +16,8 @@ public class SortingTest {
 
         // Проверяем, что отсортированный массив соответствует ожидаемому результату
         assertArrayEquals(expectedArray, sortedArray);
+        
+        // Если массивы совпадают, выводим сообщение
+        System.out.println("Все ок, массив отсортирован верно");
     }
 }
