@@ -29,10 +29,10 @@ jobs:
     - name: Notify on Success
       if: success()
       run: |
-        curl -X POST -H "Content-Type: application/json" -d '{"chat_id": "6510825489", "text": "Все тесты прошли успешно."}' https://api.telegram.org/bot7120790438:AAFsRSCgI-T8IA1SRN9x6kqKY4h3N-4XqWw/sendMessage
+        curl -X POST -H "Content-Type: application/json" -d '{"chat_id": "1988812396", "text": "Все тесты прошли успешно."}' https://api.telegram.org/bot7120790438:AAFsRSCgI-T8IA1SRN9x6kqKY4h3N-4XqWw/sendMessage
 
 
     - name: Notify on Failure
       if: failure()
       run: |
-        curl -X POST -H "Content-Type: application/json" -d '{"chat_id": "6510825489", "text": "Ошибка в тестах, проверьте результаты."}' https://api.telegram.org/bot7120790438:AAFsRSCgI-T8IA1SRN9x6kqKY4h3N-4XqWw/sendMessage
+        curl -X POST -H "Content-Type: application/json" -d '{"chat_id": "1988812396", "text": "Ошибка в тестах, проверьте результаты."}' https://api.telegram.org/bot7120790438:AAFsRSCgI-T8IA1SRN9x6kqKY4h3N-4XqWw/sendMessage
